@@ -10,14 +10,22 @@ function App(props) {
   //Utilizamos la tecnica: destructuring
   //Cada vez que actualicemos un estado se va a volver a renderizar el  componente
   //y en el dom SOLO cambiará la linea que contenga el valor
-  const [contadorValue, updateContador] = useState(contadorInicial);
+  const [contador, setContador] = useState(contadorInicial);
 
+  /*
   setInterval(() => {
     updateContador(contadorValue + 1);
-  }, 2000);
+  }, 2000); */
+  
   return (
     <div className="App">
-      Hello World + {contadorValue}
+      {contador}
+      <br></br>
+      <button onClick={() => {
+        setContador(contador + 1);
+      }}>
+        Incrementar
+      </button>
     </div>
   );
 }
